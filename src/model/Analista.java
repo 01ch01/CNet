@@ -1,17 +1,30 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @since May 29, 2019 at 1:31:44 PM
- * @version 0.1
- */
-
 package model;
 
-import java.util.Scanner;
+import controller.Autenticavel;
+public class Analista extends Funcionario implements Autenticavel {
+    private String senha;
+    public Analista() {
+        super();
+        super.txBonificacao = 0.08;
+        this.senha = "";
+    }
+    
+    @Override
+    public void autenticar(String senha) {
+        String nome;
+        System.out.println("Informe o roteador: ");
+        nome = input.nextLine();
+        System.out.println("Senha: ");
+        senha = input.nextLine();
+        if(this.senha.equals(senha)){
+            System.out.println("Acesso autorizado!");
+        }
+        else
+            System.out.println("Acesso negado!");
+    }
 
-public class Analista {
-    Scanner input = new Scanner(System.in);
-    
-    
+    @Override
+    public double getGratificacao() {
+        return super.salario * super.txBonificacao;
+    }
 }

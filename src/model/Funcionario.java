@@ -1,20 +1,12 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- *
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @version 0.1
- * @since May 29, 2019 at 1:27:24 PM
- */
 package model;
 
-abstract public class Funcionario extends Pessoa {
+public class Funcionario extends Pessoa {
 
     protected double salario;
     protected String cpf;
     protected String anoAdmissao;
     protected String formacao;
-    protected double bonificacao;
+    protected double txBonificacao;
 
     public Funcionario() {
         super();
@@ -22,7 +14,37 @@ abstract public class Funcionario extends Pessoa {
         this.setCpf("");
         this.setAnoAdmissao("");
         this.setFormacao("N/A");
-        this.setBonificacao(0.0);
+        this.settxBonificacao(0.0);
+    }
+
+    @Override
+    public void preencher() {
+        System.out.println("\n --CADASTRO DE COLABORADOR --");
+        super.preencher();
+        System.out.println("CPF: ");
+        this.cpf = input.nextLine();
+        System.out.println("Salário: R$ ");
+        this.salario = input.nextDouble();
+        input.nextLine();
+        System.out.println("Formação: ");
+        this.formacao = input.nextLine();
+        System.out.println("Ano de Admissão: ");
+        this.anoAdmissao = input.nextLine();
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println("\n -- INFORMAÇÕES CADASTRAIS --");
+        super.imprimir();
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("Salário: R$ " + this.salario);
+        System.out.println("Formação: " + this.formacao);
+        System.out.println("Ano de Admissão: " + this.anoAdmissao);
+        System.out.println("--");
+    }
+
+    public double getGratificacao() {
+        return -1;
     }
 
     public double getSalario() {
@@ -57,11 +79,12 @@ abstract public class Funcionario extends Pessoa {
         this.formacao = formacao;
     }
 
-    public double getBonificacao() {
-        return bonificacao;
+    public double gettxBonificacao() {
+        return txBonificacao;
     }
 
-    public void setBonificacao(double bonificacao) {
-        this.bonificacao = bonificacao;
+    public void settxBonificacao(double txBonificacao) {
+        this.txBonificacao = txBonificacao;
     }
+
 }

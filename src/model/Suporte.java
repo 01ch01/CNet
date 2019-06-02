@@ -1,17 +1,45 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @since May 29, 2019 at 1:31:50 PM
- * @version 0.1
- */
-
 package model;
 
-import java.util.Scanner;
 
-public class Suporte {
-    Scanner input = new Scanner(System.in);
+public class Suporte extends Funcionario{
+    private double ligacoesRevertidas;
+    
+
+    public Suporte() {
+        super();
+        this.ligacoesRevertidas = 88;
+        super.salario = 1200;
+    }
+
+    @Override
+    public double getGratificacao() {
+        System.out.println("\n[Gratificação Suporte Técnico] ");
+        if(100 <= this.ligacoesRevertidas || this.ligacoesRevertidas >= 89){
+            super.settxBonificacao(150);
+        }
+        else if(89 < this.ligacoesRevertidas || this.ligacoesRevertidas >= 86){
+            super.settxBonificacao(100);
+        }
+        else if(86 < this.ligacoesRevertidas || this.ligacoesRevertidas >=84){
+            super.settxBonificacao(80);
+        }
+        else if(84 < this.ligacoesRevertidas || this.ligacoesRevertidas >= 82){
+            super.settxBonificacao(60);
+        }
+        else if(82 < this.ligacoesRevertidas || this.ligacoesRevertidas>= 81){
+            super.settxBonificacao(50);
+        }
+        else{
+            System.out.println("Você não receberá bonificação esse mês");
+        }
+        System.out.println(super.txBonificacao);
+        return -1;
+    }
+    
+    
+    
+    
+    
     
     
 }

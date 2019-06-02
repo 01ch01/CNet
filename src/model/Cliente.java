@@ -1,15 +1,6 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- *
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @since May 29, 2019 at 1:27:10 PM
- * @version 0.1
- */
 package model;
 
 public class Cliente extends Pessoa {
-
     protected Plano plano;
     protected String cod;
     protected String anoAdesao;
@@ -18,9 +9,8 @@ public class Cliente extends Pessoa {
         super();
         this.cod = "";
         this.anoAdesao = "";
-        this.definirPlano();
+//        this.definirPlano();
         this.plano = new Plano();
-        this.definirPlano();
     }
 
     public Plano getPlano() {
@@ -47,7 +37,7 @@ public class Cliente extends Pessoa {
         this.anoAdesao = anoAdesao;
     }
 
-    public final void definirPlano() {
+    public void definirPlano() {
         int opcao = 0;
         do {
             System.out.println("Escolha o plano que deseja:");
@@ -65,21 +55,49 @@ public class Cliente extends Pessoa {
         switch (opcao) {
             case 1:
                 this.plano.setNome("05 MEGA");
+                this.plano.definirPreco();
                 break;
             case 2:
                 this.plano.setNome("10 MEGA");
+                this.plano.definirPreco();
                 break;
             case 3:
                 this.plano.setNome("15 MEGA");
+                this.plano.definirPreco();
                 break;
             case 4:
                 this.plano.setNome("20 MEGA");
+                this.plano.definirPreco();
                 break;
             case 5:
                 this.plano.setNome("25 MEGA");
+                this.plano.definirPreco();
                 break;
             default:
                 break;
         }
     }
+    @Override
+    public void preencher(){
+        System.out.println("\n-- CADASTRO DE CLIENTE --");
+        super.preencher();
+        this.definirPlano();
+        input.nextLine();
+        System.out.println("Código: ");
+        this.cod = input.nextLine();
+        System.out.println("Ano da Adesão: ");
+        this.anoAdesao = input.nextLine();
+        System.out.println("Plano Contratado: ");
+    }
+    
+    @Override
+    public void imprimir(){
+        System.out.println("\n -- INFORMAÇÕES CADASTRAIS --");
+        super.imprimir();
+        System.out.println("Plano Contratado: " + plano.getNome() + " - " + plano.getPreco());
+        System.out.println("Nome/Razão Social: " + super.nome);
+        System.out.println("Código: " + this.cod);
+        System.out.println("Ano de Adesão: " + this.anoAdesao);
+    }
+    
 }

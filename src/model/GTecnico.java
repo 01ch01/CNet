@@ -1,24 +1,40 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- *
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @since May 29, 2019 at 1:31:14 PM
- * @version 0.1
- */
 package model;
 
 import controller.Autenticavel;
 
-public class GTecnico extends Gerente implements Autenticavel {
+public class GTecnico extends Gerente implements Autenticavel{
 
     public GTecnico() {
         super();
+        super.salario = 5000;
+        super.txBonificacao = 0.20;
+        super.grupoSubordinado = "Setor Técnico";
     }
 
     @Override
-    public boolean autenticar(String senha) {
-        return this.senha.equals(senha);
+    public String grupoGerenciado() {
+        return super.grupoSubordinado;
     }
 
+    @Override
+    public void autenticar(String senha) {
+        String nome = "";
+        System.out.println("Informe o roteador: ");
+        nome = input.nextLine();
+        System.out.println("Senha: ");
+        senha = input.nextLine();
+        if(this.senha.equals(senha)){
+            System.out.println("Acesso autorizado!");
+        }
+        else
+            System.out.println("Acesso negado!");
+    }
+
+    @Override
+    public double getGratificacao() {
+        System.out.println("\n[Gratificação Gerente Técnico] ");
+        return super.salario * this.txBonificacao;
+    }
+    
+    
 }
