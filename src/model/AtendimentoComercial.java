@@ -1,17 +1,21 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @since May 29, 2019 at 1:31:39 PM
- * @version 0.1
- */
-
 package model;
 
-import java.util.Scanner;
+public class AtendimentoComercial extends Funcionario{
+    private int contrato, cancelados;
+    public AtendimentoComercial() {
+        super();
+        super.txBonificacao = 100.00;
+        this.contrato = 100;
+        this.cancelados = 15;
+    }
 
-public class AtendimentoComercial {
-    Scanner input = new Scanner(System.in);
-    
-    
+    @Override
+    public double getGratificacao() {
+        System.out.println("\n[Atendimento Comercial] ");
+        if(this.contrato > this.cancelados){
+            return super.txBonificacao;
+        }
+        else
+            return 0;
+    }
 }

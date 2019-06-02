@@ -1,11 +1,3 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- *
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @since May 29, 2019 at 2:46:43 PM
- * @version 0.1
- */
 package model;
 
 abstract public class ClienteJuridico extends Cliente {
@@ -16,5 +8,22 @@ abstract public class ClienteJuridico extends Cliente {
         super();
         this.cnpj = "";
     }
+
+    @Override
+    public void preencher() {
+        super.preencher();
+        System.out.println("CNPJ: ");
+        this.cnpj = input.nextLine();
+    }
+
+    @Override
+    public void imprimir() {
+        super.imprimir(); 
+        System.out.println("CNPJ: " + this.cnpj);
+    }
+    
+    
+    
+    
 
 }

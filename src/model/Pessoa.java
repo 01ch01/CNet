@@ -1,11 +1,3 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @since May 29, 2019 at 1:27:00 PM
- * @version 0.1
- */
-
 package model;
 
 import java.util.Scanner;
@@ -23,6 +15,24 @@ abstract public class Pessoa extends javax.swing.JFrame{
         this.endereco = "";
         this.email = "";
         this.telefone = "";
+    }
+    
+    public void preencher(){
+        System.out.println("Nome Completo: ");
+        this.nome = input.nextLine();
+        System.out.println("Endereço Residencial: ");
+        this.endereco = input.nextLine();
+        System.out.println("E-mail: ");
+        this.email = input.nextLine();
+        System.out.println("Telefone: ");
+        this.telefone = input.nextLine();
+    }
+    
+    public void imprimir(){
+        System.out.println("Nome Completo: " + this.nome);
+        System.out.println("Endereço Residencial: " + this.endereco);
+        System.out.println("E-mail: " + this.email);
+        System.out.println("Telefone: " + this.telefone);
     }
     
     public String getNome() {

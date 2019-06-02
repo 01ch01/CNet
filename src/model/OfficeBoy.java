@@ -1,20 +1,14 @@
-/**
- * Título da classe.
- * Insira aqui uma pequena descrição sobre a mesma.
- *
- * @author Cláudio Henrique <https://github.com/01ch01>
- * @since May 29, 2019 at 1:30:15 PM
- * @version 0.1
- */
 package model;
 
 public class OfficeBoy extends Funcionario {
 
     protected double taxaBoleto;
+    protected double qtdBoleto;
 
     public OfficeBoy() {
         super();
         this.taxaBoleto = 0.1;
+        this.qtdBoleto = 2000.00;
     }
 
     public double getTaxaBoleto() {
@@ -25,4 +19,11 @@ public class OfficeBoy extends Funcionario {
         this.taxaBoleto = taxaBoleto;
     }
 
+    @Override
+    public double getGratificacao() {
+        System.out.println("\n[Gratificação Office Boy] ");
+        return this.qtdBoleto*this.taxaBoleto;
+    }
+    
+    
 }
