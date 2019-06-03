@@ -11,15 +11,20 @@ abstract public class ClienteJuridico extends Cliente {
 
     @Override
     public void preencher() {
-        super.preencher();
+        System.out.println("CADASTRO DE CLIENTE EMPRESARIAL");
+        System.out.println("Razão Social: ");
+        super.nome = input.nextLine();
         System.out.println("CNPJ: ");
         this.cnpj = input.nextLine();
+        super.preencher();
     }
 
     @Override
     public void imprimir() {
-        super.imprimir(); 
+        System.out.println("DADOS CADASTRAIS");
+        System.out.println("Razão Social: " + super.nome);
         System.out.println("CNPJ: " + this.cnpj);
+        super.imprimir(); 
     }
     
     

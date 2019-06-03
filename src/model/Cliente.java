@@ -79,7 +79,6 @@ public class Cliente extends Pessoa {
     }
     @Override
     public void preencher(){
-        System.out.println("\n-- CADASTRO DE CLIENTE --");
         super.preencher();
         this.definirPlano();
         input.nextLine();
@@ -92,10 +91,8 @@ public class Cliente extends Pessoa {
     
     @Override
     public void imprimir(){
-        System.out.println("\n -- INFORMAÇÕES CADASTRAIS --");
         super.imprimir();
         System.out.println("Plano Contratado: " + plano.getNome() + " - " + plano.getPreco());
-        System.out.println("Nome/Razão Social: " + super.nome);
         System.out.println("Código: " + this.cod);
         System.out.println("Ano de Adesão: " + this.anoAdesao);
     }

@@ -19,10 +19,12 @@ public class  CNet {
 //        System.out.println(f.mostrarGratificacao(o));
 //        System.out.println(f.mostrarGratificacao(e));
 
-        Gerente g = new Gerente();
-        Gerente a = new GAdministrativo();
-        Gerente b = new GTecnico();
-        System.out.println(g.mostrarGrupo(a, b));
-        
+//        Gerente g = new Gerente();
+//        Gerente a = new GAdministrativo();
+//        Gerente b = new GTecnico();
+//        System.out.println(g.mostrarGrupo(a, b));
+           Cliente c = new CEmpresarial();
+           c.preencher();
+           c.imprimir();
     }
 }

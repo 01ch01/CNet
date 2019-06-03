@@ -18,8 +18,6 @@ abstract public class Pessoa extends javax.swing.JFrame{
     }
     
     public void preencher(){
-        System.out.println("Nome Completo: ");
-        this.nome = input.nextLine();
         System.out.println("Endereço Residencial: ");
         this.endereco = input.nextLine();
         System.out.println("E-mail: ");
@@ -29,7 +27,6 @@ abstract public class Pessoa extends javax.swing.JFrame{
     }
     
     public void imprimir(){
-        System.out.println("Nome Completo: " + this.nome);
         System.out.println("Endereço Residencial: " + this.endereco);
         System.out.println("E-mail: " + this.email);
         System.out.println("Telefone: " + this.telefone);
