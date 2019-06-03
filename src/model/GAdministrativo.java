@@ -11,7 +11,7 @@ public class GAdministrativo extends Gerente {
 
     @Override
     public double getGratificacao() {
-        System.out.println("\n[Gratificação Gerente Administrativo] ");
+        System.out.println("\n[Gratificação Gerente Administrativo]");
         return super.salario * super.txBonificacao;
     }
 

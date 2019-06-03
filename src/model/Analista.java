@@ -5,6 +5,7 @@ public class Analista extends Funcionario implements Autenticavel {
     private String senha;
     public Analista() {
         super();
+        super.cargo = "Analista de Rede";
         super.txBonificacao = 0.08;
         this.senha = "";
     }
@@ -25,6 +26,7 @@ public class Analista extends Funcionario implements Autenticavel {
 
     @Override
     public double getGratificacao() {
+        System.out.println("\n[Gratificação Analista]");
         return super.salario * super.txBonificacao;
     }
 }
