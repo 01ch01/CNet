@@ -3,6 +3,7 @@ package model;
 public class GAdministrativo extends Gerente {
     public GAdministrativo() {
         super();
+        super.cargo = "Gerente Administrativo";
         super.salario = 3000;
         super.txBonificacao = 0.15;
         super.grupoSubordinado = "Atendimento Comercial + Office Boy";

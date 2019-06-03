@@ -1,6 +1,6 @@
 package model;
 
-public class TecnicoExterno extends SetorTecnico {
+public class TecnicoExterno extends Funcionario {
 
     public TecnicoExterno() {
         super();

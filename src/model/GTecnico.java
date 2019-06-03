@@ -6,6 +6,7 @@ public class GTecnico extends Gerente implements Autenticavel{
 
     public GTecnico() {
         super();
+        super.cargo = "Gerente Técnico";
         super.salario = 5000;
         super.txBonificacao = 0.20;
         super.grupoSubordinado = "Setor Técnico";
