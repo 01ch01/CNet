@@ -1,6 +1,6 @@
 package model;
 
-abstract public class Gerente extends Funcionario{
+public class Gerente extends Funcionario{
 
     protected String senha;
     public String grupoSubordinado;
@@ -29,5 +29,13 @@ abstract public class Gerente extends Funcionario{
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    
+    public String mostrarGrupo(Gerente a, Gerente b){
+        System.out.println("GRUPO GERENCIADO");
+        String infoA = "\n" + a.getCargo() + "\n" + a.grupoGerenciado() + "\n";
+        String infoB = "\n" + b.getCargo() + "\n" + b.grupoGerenciado() + "\n";
+        
+        return infoA + infoB;
     }
 }

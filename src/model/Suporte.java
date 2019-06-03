@@ -7,13 +7,14 @@ public class Suporte extends Funcionario{
 
     public Suporte() {
         super();
+        super.cargo = "Suporte Técnico";
         this.ligacoesRevertidas = 88;
         super.salario = 1200;
     }
 
     @Override
     public double getGratificacao() {
-        System.out.println("\n[Gratificação Suporte Técnico] ");
+        System.out.println("\n[Gratificação Suporte Técnico]");
         if(100 <= this.ligacoesRevertidas || this.ligacoesRevertidas >= 89){
             super.settxBonificacao(150);
         }
@@ -35,11 +36,5 @@ public class Suporte extends Funcionario{
         System.out.println(super.txBonificacao);
         return -1;
     }
-    
-    
-    
-    
-    
-    
     
 }

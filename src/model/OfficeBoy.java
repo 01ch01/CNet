@@ -7,6 +7,7 @@ public class OfficeBoy extends Funcionario {
 
     public OfficeBoy() {
         super();
+        super.cargo = "Office Boy";
         this.taxaBoleto = 0.1;
         this.qtdBoleto = 2000.00;
     }
@@ -21,7 +22,7 @@ public class OfficeBoy extends Funcionario {
 
     @Override
     public double getGratificacao() {
-        System.out.println("\n[Gratificação Office Boy] ");
+        System.out.println("\n[Gratificação Office Boy]");
         return this.qtdBoleto*this.taxaBoleto;
     }
     

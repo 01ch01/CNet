@@ -5,7 +5,7 @@ public class Funcionario extends Pessoa {
     protected double salario;
     protected String cpf;
     protected String anoAdmissao;
-    protected String formacao;
+    protected String cargo;
     protected double txBonificacao;
 
     public Funcionario() {
@@ -13,7 +13,7 @@ public class Funcionario extends Pessoa {
         this.setSalario(0.0);
         this.setCpf("");
         this.setAnoAdmissao("");
-        this.setFormacao("N/A");
+        this.setCargo("N/A");
         this.settxBonificacao(0.0);
     }
 
@@ -26,8 +26,8 @@ public class Funcionario extends Pessoa {
         System.out.println("Salário: R$ ");
         this.salario = input.nextDouble();
         input.nextLine();
-        System.out.println("Formação: ");
-        this.formacao = input.nextLine();
+        System.out.println("Cargo: ");
+        this.cargo = input.nextLine();
         System.out.println("Ano de Admissão: ");
         this.anoAdmissao = input.nextLine();
     }
@@ -38,13 +38,13 @@ public class Funcionario extends Pessoa {
         super.imprimir();
         System.out.println("CPF: " + this.cpf);
         System.out.println("Salário: R$ " + this.salario);
-        System.out.println("Formação: " + this.formacao);
+        System.out.println("Cargo: " + this.cargo);
         System.out.println("Ano de Admissão: " + this.anoAdmissao);
         System.out.println("--");
     }
 
     public double getGratificacao() {
-        return -1;
+        return this.salario * this.txBonificacao;
     }
 
     public double getSalario() {
@@ -71,12 +71,12 @@ public class Funcionario extends Pessoa {
         this.anoAdmissao = anoAdmissao;
     }
 
-    public String getFormacao() {
-        return formacao;
+    public String getCargo() {
+        return cargo;
     }
 
-    public void setFormacao(String formacao) {
-        this.formacao = formacao;
+    public void setCargo(String formacao) {
+        this.cargo = formacao;
     }
 
     public double gettxBonificacao() {
@@ -86,5 +86,11 @@ public class Funcionario extends Pessoa {
     public void settxBonificacao(double txBonificacao) {
         this.txBonificacao = txBonificacao;
     }
-
+    
+    public double mostrarGratificacao(Funcionario aux){
+        double result = 0.0;
+        result = aux.getGratificacao();
+       
+        return result;
+    }
 }

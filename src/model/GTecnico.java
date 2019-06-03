@@ -6,6 +6,7 @@ public class GTecnico extends Gerente implements Autenticavel{
 
     public GTecnico() {
         super();
+        super.cargo = "Gerente Técnico";
         super.salario = 5000;
         super.txBonificacao = 0.20;
         super.grupoSubordinado = "Setor Técnico";
@@ -32,7 +33,7 @@ public class GTecnico extends Gerente implements Autenticavel{
 
     @Override
     public double getGratificacao() {
-        System.out.println("\n[Gratificação Gerente Técnico] ");
+        System.out.println("\n[Gratificação Gerente Técnico]");
         return super.salario * this.txBonificacao;
     }
     

@@ -3,6 +3,7 @@ package model;
 public class GAdministrativo extends Gerente {
     public GAdministrativo() {
         super();
+        super.cargo = "Gerente Administrativo";
         super.salario = 3000;
         super.txBonificacao = 0.15;
         super.grupoSubordinado = "Atendimento Comercial + Office Boy";
@@ -10,7 +11,7 @@ public class GAdministrativo extends Gerente {
 
     @Override
     public double getGratificacao() {
-        System.out.println("\n[Gratificação Gerente Administrativo] ");
+        System.out.println("\n[Gratificação Gerente Administrativo]");
         return super.salario * super.txBonificacao;
     }
 

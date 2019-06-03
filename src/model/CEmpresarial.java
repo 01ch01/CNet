@@ -1,7 +1,5 @@
 package model;
 
-import controller.PlanosEspeciais;
-
 public class CEmpresarial extends ClienteJuridico  {
     public Plano planos;
 
